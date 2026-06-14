@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finnish Taxi Exam Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero" aria-labelledby="app-title">
+      <p class="eyebrow">Finnish taxi exam practice</p>
+      <h1 id="app-title">Taxi Exam Practice</h1>
+    </section>
+
+    <section class="study-card" aria-live="polite">
+      <div class="stats-grid" aria-label="Practice statistics">
+        <div>
+          <span class="stat-label">Progress</span>
+          <strong id="progressText">Question 0 / 0</strong>
+        </div>
+        <div>
+          <span class="stat-label">Correct</span>
+          <strong id="correctCount">0</strong>
+        </div>
+        <div>
+          <span class="stat-label">Missed</span>
+          <strong id="missedCount">0</strong>
+        </div>
+        <div>
+          <span class="stat-label">Answered</span>
+          <strong id="answeredCount">0</strong>
+        </div>
+      </div>
+
+      <div id="emptyState" class="message hidden">
+        No questions found for this mode.
+      </div>
+
+      <div id="completeState" class="message hidden">
+        <h2>Test complete!</h2>
+        <p id="completeSummary"></p>
+        <button id="completeRestartButton" class="primary-button" type="button">Start new 50 questions</button>
+      </div>
+
+      <article id="flashcard" class="flashcard">
+        <div class="card-meta">
+          <span id="sourceText">Sample</span>
+          <span id="modeText">50 question test</span>
+        </div>
+
+        <p id="questionText" class="question-text"></p>
+
+        <figure id="questionImageWrap" class="question-image-wrap hidden">
+          <img id="questionImage" src="" alt="">
+        </figure>
+
+        <div id="choiceList" class="choice-list" aria-label="Answer choices">
+        </div>
+      </article>
+
+      <div class="main-actions">
+        <button id="previousButton" type="button">Previous question</button>
+        <button id="nextButton" type="button">Next question</button>
+      </div>
+
+      <div class="secondary-actions">
+        <button id="restartButton" type="button">Start new 50 questions</button>
+      </div>
+
+      <section id="reportSection" class="report-section hidden" aria-labelledby="reportTitle">
+        <h2 id="reportTitle">Testin yleiskatsaus</h2>
+        <div class="report-table-wrap">
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>Järjestys</th>
+                <th>Kysymykset</th>
+                <th>Annettu vastaus</th>
+                <th>Oikeat</th>
+                <th>Tulos</th>
+              </tr>
+            </thead>
+            <tbody id="reportBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
